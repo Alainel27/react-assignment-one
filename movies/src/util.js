@@ -6,3 +6,5 @@ export function excerpt(string) {
     separator: /,?\.* +/, // separate by spaces, including preceding commas and periods
   });
 }
+
+console.log("TMDB API Key:", process.env.REACT_APP_TMDB_KEY);

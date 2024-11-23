@@ -55,6 +55,18 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
 
+<li>
+          <Chip label="Production Companies" sx={{...chip}} color="primary" />
+        </li>
+        {movie.production_companies.map((companies) => (
+          <li key={companies.name}>
+            <Chip label={companies.name} sx={{...chip}} />
+          </li>
+        ))}
+
+
+
+
 
         </Paper>
       <Paper component="ul" sx={{...root}}>

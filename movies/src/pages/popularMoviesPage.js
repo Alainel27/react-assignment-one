@@ -5,6 +5,8 @@ import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 //import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
+
 
 const PopularMoviesPage = (props) => {
 
@@ -29,7 +31,8 @@ const PopularMoviesPage = (props) => {
       title="Popular Movies"
       movies={movies}
       action={(movie) => {
-        return <PlaylistAddIcon movie={movie} />
+       //return <PlaylistAddIcon movie={movie} />
+       return <AddToFavoritesIcon movie={movie} />
       }}
     />
 );

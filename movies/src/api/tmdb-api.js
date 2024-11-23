@@ -134,6 +134,74 @@ export const getMovie = (args) => {
         throw error
     });
   };
+
+  export const getNowPlayingMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    ).then((response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+        throw error
+    });
+  };
+  
+
+  //9479 is the-nightmare-before-christmas id
+  export const getRecommendations = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/9479/recommendations?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    ).then((response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+        throw error
+    });
+  };
+
+  export const getSimilar = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/9479/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    ).then((response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+        throw error
+    });
+  };
+
+  export const getWatchlist = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/account/21624496/watchlist/movies?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    ).then((response) => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          throw new Error(error.status_message || "Something went wrong");
+        });
+      }
+      return response.json();
+    })
+    .catch((error) => {
+        throw error
+    });
+  };
+
+
   
   export const getProductionCountry = (id) => {
     

@@ -4,6 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 
 const HomePage = (props) => {
 
@@ -23,12 +24,24 @@ const HomePage = (props) => {
   localStorage.setItem('favorites', JSON.stringify(favorites))
   const addToFavorites = (movieId) => true 
 
+  const watchlist = movies.filter(m => m.watchlist)
+  localStorage.setItem('watchlist', JSON.stringify(watchlist))
+  const addToWatchlist = (movieId) => true 
+  
+
   return (
     <PageTemplate
       title="Discover Movies"
       movies={movies}
       action={(movie) => {
-        return <AddToFavoritesIcon movie={movie} />
+      
+        return(
+          <>
+          <AddToFavoritesIcon movie={movie} />
+          <AddToWatchlistIcon movie={movie} />
+          </>
+        ); 
+      
       }}
     />
 );

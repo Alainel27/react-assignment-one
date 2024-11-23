@@ -1,15 +1,14 @@
 import React from "react";
-import { getTopRatedMovies } from "../api/tmdb-api";
+import { getNowPlayingMovies } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 //import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
+const NowPlayingMoviesPage = (props) => {
 
-const TopRatedMoviesPage = (props) => {
-
-  const {  data, error, isLoading, isError }  = useQuery('topRated', getTopRatedMovies)
+  const {  data, error, isLoading, isError }  = useQuery('nowPlaying', getNowPlayingMovies)
 
   if (isLoading) {
     return <Spinner />
@@ -27,7 +26,7 @@ const TopRatedMoviesPage = (props) => {
 
   return (
     <PageTemplate
-      title="Top Rated Movies"
+      title="Now Playing "
       movies={movies}
       action={(movie) => {
         //return <PlaylistAddIcon movie={movie} />
@@ -36,4 +35,4 @@ const TopRatedMoviesPage = (props) => {
     />
 );
 };
-export default TopRatedMoviesPage;
+export default NowPlayingMoviesPage;

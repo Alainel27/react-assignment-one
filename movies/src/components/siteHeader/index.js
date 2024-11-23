@@ -19,9 +19,10 @@ const SiteHeader = ({ history }) => {
   const open = Boolean(anchorEl);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   
   const navigate = useNavigate();
+
 
   const menuOptions = [
     { label: "Home", path: "/" },
@@ -45,16 +46,17 @@ const SiteHeader = ({ history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="primary">
-        <Toolbar>
+   
+      <AppBar position="static" color="primary">
+        <Toolbar >
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client
           </Typography>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Movies For You
           </Typography>
-            {isMobile ? (
-              <>
+            
+              
                 <IconButton
                   aria-label="menu"
                   aria-controls="menu-appbar"
@@ -64,6 +66,8 @@ const SiteHeader = ({ history }) => {
                 >
                   <MenuIcon />
                 </IconButton>
+
+
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
@@ -88,24 +92,13 @@ const SiteHeader = ({ history }) => {
                     </MenuItem>
                   ))}
                 </Menu>
-              </>
-            ) : (
-              <>
-                {menuOptions.map((opt) => (
-                  <Button
-                    key={opt.label}
-                    color="inherit"
-                    onClick={() => handleMenuSelect(opt.path)}
-                  >
-                    {opt.label}
-                  </Button>
-                ))}
-              </>
-            )}
+              
+            
         </Toolbar>
       </AppBar>
       <Offset />
-    </>
+      </>
+    
   );
 };
 

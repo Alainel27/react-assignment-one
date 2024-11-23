@@ -30,6 +30,7 @@ export default function MovieCard({ movie, action}) {
     addToFavorites(movie);
   };
   
+  
   return (
     <Card>
       <CardHeader

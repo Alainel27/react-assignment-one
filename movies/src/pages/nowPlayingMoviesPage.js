@@ -3,9 +3,9 @@ import { getNowPlayingMovies } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
-//import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
+
 const NowPlayingMoviesPage = (props) => {
 
   const {  data, error, isLoading, isError }  = useQuery('nowPlaying', getNowPlayingMovies)
@@ -29,8 +29,12 @@ const NowPlayingMoviesPage = (props) => {
       title="Now Playing "
       movies={movies}
       action={(movie) => {
-        //return <PlaylistAddIcon movie={movie} />
-        return <AddToFavoritesIcon movie={movie} />
+        return(
+          <>
+          <AddToFavoritesIcon movie={movie} />
+          <AddToWatchlistIcon movie={movie} />
+          </>
+        ); 
       }}
     />
 );

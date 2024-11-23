@@ -3,8 +3,7 @@ import { getRecommendations } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
-//import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
 
 
@@ -31,8 +30,12 @@ const RecommendationsPage = (props) => {
       title="Recommendations"
       movies={movies}
       action={(movie) => {
-        //return <PlaylistAddIcon movie={movie} />
-        return <AddToFavoritesIcon movie={movie} />
+        return(
+          <>
+          <AddToFavoritesIcon movie={movie} />
+          <AddToWatchlistIcon movie={movie} />
+          </>
+        ); 
       }}
     />
 );

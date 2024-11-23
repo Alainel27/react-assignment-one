@@ -3,8 +3,8 @@ import { getSimilar } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
-//import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
+import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 
 const SimilarPage = (props) => {
 
@@ -29,7 +29,12 @@ const SimilarPage = (props) => {
       title="Similar"
       movies={movies}
       action={(movie) => {
-        return <PlaylistAddIcon movie={movie} />
+        return(
+          <>
+          <AddToFavoritesIcon movie={movie} />
+          <AddToWatchlistIcon movie={movie} />
+          </>
+        ); 
       }}
     />
 );

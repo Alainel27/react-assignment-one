@@ -23,7 +23,6 @@ const SiteHeader = ({ history }) => {
   
   const navigate = useNavigate();
 
-
   const menuOptions = [
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
@@ -32,7 +31,7 @@ const SiteHeader = ({ history }) => {
     { label: "Top Rated ", path: "/movies/topRated" },
     { label: "Now Playing ", path: "/movies/nowPlaying" },
     { label: "Recommendations ", path: "/movies/recommendations" },
-    { label: "Similar ", path: "/movies/similar" },
+    { label: "Similar Movies ", path: "/movies/similar" },
     { label: "Watchlist ", path: "/movies/watchlist" },
   ];
 
@@ -44,6 +43,7 @@ const SiteHeader = ({ history }) => {
     setAnchorEl(event.currentTarget);
   };
 
+ 
   return (
     <>
    

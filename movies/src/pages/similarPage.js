@@ -26,7 +26,7 @@ const SimilarPage = (props) => {
 
   return (
     <PageTemplate
-      title="Similar"
+      title="Similar Movies to Recommendations"
       movies={movies}
       action={(movie) => {
         return(

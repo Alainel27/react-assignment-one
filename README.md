@@ -9,7 +9,7 @@ The react project is an extension to the react movie lab works with only new end
 ## Features.
 + Watchlist -  added playlist icon to all pages to add movies to the watchlist page
 
-+ Dropbox Menu
++ Dropbox Menu for links to pages
 
 
 ## Setup requirements.
@@ -19,7 +19,6 @@ The first part is to enter the directory of assignment, then to enter the movie 
 ## API endpoints.
 
 Static Endpoints
-+ Upcoming - /movies/upcoming - displays upcoming movies
 + Popular - /movies/popular - displays popular movies
 + Top Rated - /movies/topRated - displays all time top rated movies
 + Now Playing - /movies/nowPlaying - displaying now playing movies

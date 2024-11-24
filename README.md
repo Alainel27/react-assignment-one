@@ -32,8 +32,6 @@ Parameterised Endpoints
 I didnt know how to add routing.
 
 ## Independent learning (If relevant).
-
-
-I mainly used the lab work to write the code for the assignment. I used Chatgpt to trouble shoot and help explain the function of some of the code. I used Chatgpt to help create the dropbox menu which it only stated to remove code. For the appbar I used this website to help understand it.
+I mainly used the lab notes to write the code for the assignment. I used Chatgpt to trouble shoot and help explain the function of some of the code. I used Chatgpt to help create the dropbox menu which it only stated to remove code. For the appbar I used this website to help understand it.
 
  https://mui.com/material-ui/react-app-bar/
